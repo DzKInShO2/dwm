@@ -80,7 +80,7 @@ static const char *playerctl_next[]  = {"playerctl", "next", NULL};
 static const char *playerctl_prev[]  = {"playerctl", "previous", NULL};
 static const char *playerctl_play[]  = {"playerctl", "play-pause", NULL};
 static const char *playerctl_stop[]  = {"playerctl", "stop", NULL};
-static const char *powermenu[]       = {"~/.local/bin/powermenu", NULL};
+static const char *powermenu[]       = {"/home/dzakanov/.local/bin/powermenu", NULL};
 static const char *screenshot[]      = {"flameshot", "gui", NULL};
 
 static const Key keys[] = {
