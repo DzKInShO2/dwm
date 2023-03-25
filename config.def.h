@@ -70,16 +70,18 @@ static const Layout layouts[] = {
 /* commands */
 static const char *dmenucmd[]        = { "dmenu_run", "-c", "-l", "16", "-fn", dmenufont, "-nb", col_gray1, "-nf", col_gray3, "-sb", col_cyan, "-sf", col_gray4, NULL };
 static const char *termcmd[]         = { "st", NULL };
-static const char *volume_up[]       = {"wpctl", "set-volume", "@DEFAULT_AUDIO_SINK@", "2%+"};
-static const char *volume_down[]     = {"wpctl", "set-volume", "@DEFAULT_AUDIO_SINK@", "2%-"};
-static const char *volume_mute[]     = {"wpctl", "set-mute", "@DEFAULT_AUDIO_SINK@", "toggle"};
-static const char *mic_mute[]        = {"wpctl", "set-mute", "@DEFAULT_AUDIO_SOURCE@", "toggle"};
-static const char *brightness_up[]   = {"brightnessctl", "s", "2%+"};
-static const char *brightness_down[] = {"brightnessctl", "s", "2%-"};
-static const char *playerctl_next[] = {"playerctl", "next"};
-static const char *playerctl_prev[] = {"playerctl", "previous"};
-static const char *playerctl_play[] = {"playerctl", "play-pause"};
-static const char *playerctl_stop[] = {"playerctl", "stop"};
+static const char *volume_up[]       = {"wpctl", "set-volume", "@DEFAULT_AUDIO_SINK@", "2%+", NULL};
+static const char *volume_down[]     = {"wpctl", "set-volume", "@DEFAULT_AUDIO_SINK@", "2%-", NULL};
+static const char *volume_mute[]     = {"wpctl", "set-mute", "@DEFAULT_AUDIO_SINK@", "toggle", NULL};
+static const char *mic_mute[]        = {"wpctl", "set-mute", "@DEFAULT_AUDIO_SOURCE@", "toggle", NULL};
+static const char *brightness_up[]   = {"brightnessctl", "s", "2%+", NULL};
+static const char *brightness_down[] = {"brightnessctl", "s", "2%-", NULL};
+static const char *playerctl_next[]  = {"playerctl", "next", NULL};
+static const char *playerctl_prev[]  = {"playerctl", "previous", NULL};
+static const char *playerctl_play[]  = {"playerctl", "play-pause", NULL};
+static const char *playerctl_stop[]  = {"playerctl", "stop", NULL};
+static const char *powermenu[]       = {"~/.local/bin/powermenu", NULL};
+static const char *screenshot[]      = {"flameshot", "gui", NULL};
 
 static const Key keys[] = {
 	/* modifier                           key                       function        argument */
@@ -116,6 +118,8 @@ static const Key keys[] = {
 	{ 0,                                  XF86XK_AudioNext,         spawn,          {.v = playerctl_next} },
 	{ 0,                                  XF86XK_AudioPrev,         spawn,          {.v = playerctl_prev} },
 	{ 0,                                  XF86XK_AudioStop,         spawn,          {.v = playerctl_stop} },
+	{ 0,                                  XF86XK_PowerOff,          spawn,          {.v = powermenu} },
+	{ 0,                                  XK_Print,                 spawn,          {.v = screenshot} },
 	TAGKEYS(                        XK_1, 0)
 	TAGKEYS(                        XK_2, 1)
 	TAGKEYS(                        XK_3, 2)
