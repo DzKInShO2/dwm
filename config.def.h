@@ -14,11 +14,11 @@ static const int user_bh            = 26;        /* 0 means that dwm will calcul
 #define ICONSPACING 5 /* space between icon and title */
 static const char *fonts[]          = { "FiraCode:size=10" };
 static const char dmenufont[]       = "JetBrains Mono:size=10";
-static const char col_gray1[]       = "#222222";
-static const char col_gray2[]       = "#444444";
-static const char col_gray3[]       = "#bbbbbb";
-static const char col_gray4[]       = "#eeeeee";
-static const char col_cyan[]        = "#005577";
+static const char col_gray1[]       = "#2e3440"; // background color
+static const char col_gray2[]       = "#434c5e"; // inactive border color
+static const char col_gray3[]       = "#eceff4"; // font color
+static const char col_gray4[]       = "#d8dee9"; // tags color
+static const char col_cyan[]        = "#4c566a"; // active color
 static const char *colors[][3]      = {
 	/*               fg         bg         border   */
 	[SchemeNorm] = { col_gray3, col_gray1, col_gray2 },
